@@ -1,7 +1,9 @@
 { pkgs ? import <nixpkgs> { } }:
 
-# The baryon-mcp release writes pkgs/baryon-mcp/default.nix. The guard keeps
-# the repository evaluable while that file is absent.
+# Each release writes its package under pkgs/. The guards keep the
+# repository evaluable while generated package files are absent.
 pkgs.lib.optionalAttrs (builtins.pathExists ./pkgs/baryon-mcp) {
   baryon-mcp = pkgs.callPackage ./pkgs/baryon-mcp { };
+} // pkgs.lib.optionalAttrs (builtins.pathExists ./pkgs/vodarr) {
+  vodarr = pkgs.callPackage ./pkgs/vodarr { };
 }
