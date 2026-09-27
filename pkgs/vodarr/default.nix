@@ -11,22 +11,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1krvv6rr0yfh8n81b9cgp1s72c40ys9cz0bnnsbspavlfnw9vgr4";
-    aarch64-linux = "1j0fb817jpfmnmwypfffpg23y2i4830a8r8ql4jyxgw4chh80ldy";
-    x86_64-darwin = "0wfcsdydb7f9lm8lbzblvqwg82qp9hlxs4n7vhhn0c2v7c5n52bb";
-    aarch64-darwin = "1qrimqhp3q2dxww8xrflqj1y4z3vdx96w5xssh2l1x2xfgahz57s";
+    x86_64-linux = "14rhczj6bjqw9bax04dzbqjb8cmcm0x4zvpjqpr2n3xx1x0fryg1";
+    aarch64-linux = "0m93bi3071ksczlhrk03q9psxa74i52k2l5j8z0ln8airvh6vnhh";
+    x86_64-darwin = "0qfpp120kpb4d3nxc5df4ihlkkj69wq0qszxsa9d98wp8ccd3j4x";
+    aarch64-darwin = "042y0jxqx4vpfpn8nbh30fd1wjrg5rn5j571r4s8b2f27dk6wbyx";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/combor/vodarr/releases/download/v0.1.0/vodarr_0.1.0_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/combor/vodarr/releases/download/v0.1.0/vodarr_0.1.0_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/combor/vodarr/releases/download/v0.1.0/vodarr_0.1.0_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/combor/vodarr/releases/download/v0.1.0/vodarr_0.1.0_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/combor/vodarr/releases/download/v0.2.0/vodarr_0.2.0_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/combor/vodarr/releases/download/v0.2.0/vodarr_0.2.0_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/combor/vodarr/releases/download/v0.2.0/vodarr_0.2.0_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/combor/vodarr/releases/download/v0.2.0/vodarr_0.2.0_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "vodarr";
-  version = "0.1.0";
+  version = "0.2.0";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
