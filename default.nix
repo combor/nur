@@ -4,6 +4,6 @@
 # repository evaluable while generated package files are absent.
 pkgs.lib.optionalAttrs (builtins.pathExists ./pkgs/baryon-mcp) {
   baryon-mcp = pkgs.callPackage ./pkgs/baryon-mcp { };
-} // pkgs.lib.optionalAttrs (builtins.pathExists ./pkgs/vodarr) {
-  vodarr = pkgs.callPackage ./pkgs/vodarr { };
+} // pkgs.lib.optionalAttrs (builtins.pathExists ./pkgs/magnetowid) {
+  magnetowid = pkgs.callPackage ./pkgs/magnetowid { };
 }
