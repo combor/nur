@@ -11,22 +11,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "0pwhcin8l0y5bhvklx46vaa4cr2lb7l7nhni7zrg3ribwv2qa4fh";
-    aarch64-linux = "1a8w07bgr947fqxjbaf79p3lwg3afh45ai60n85nlx9kxbgsdxmj";
-    x86_64-darwin = "0chdqjlbrkz9kv2xxkz7clbl95k7v3i66gvs8nnfpvsbwzy9rv43";
-    aarch64-darwin = "08lsff816lwvw1dr52093ymxak2wia6hz7kyfrri2s98c1mcacg2";
+    x86_64-linux = "08pm0vc6prdrphnkdji99ch4j9x2q4qx0jmajqlb9avh3p8cdv51";
+    aarch64-linux = "1k52af6hfx0l11ljhw7415ag6f2jg9vldqkfrz45513c0yi20i1n";
+    x86_64-darwin = "1q4allhks4d4a4mkmh5m34a1sxlahnfih64006gjgsgkfynnbzfa";
+    aarch64-darwin = "0ix2xl6yg5sw0p45j1k021j2pbp5qy444za7wislgl5mrrkqls91";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/combor/telesfor/releases/download/v0.3.5/telesfor_0.3.5_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/combor/telesfor/releases/download/v0.3.5/telesfor_0.3.5_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/combor/telesfor/releases/download/v0.3.5/telesfor_0.3.5_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/combor/telesfor/releases/download/v0.3.5/telesfor_0.3.5_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/combor/telesfor/releases/download/v0.3.6/telesfor_0.3.6_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/combor/telesfor/releases/download/v0.3.6/telesfor_0.3.6_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/combor/telesfor/releases/download/v0.3.6/telesfor_0.3.6_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/combor/telesfor/releases/download/v0.3.6/telesfor_0.3.6_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "telesfor";
-  version = "0.3.5";
+  version = "0.3.6";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
