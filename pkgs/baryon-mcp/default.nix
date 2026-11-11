@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "18rp242cgrrbkvjz8pa9caxqhdrgdm7d2k0wikjkd4jhn4fzxpaj";
-    aarch64-linux = "0la5a7jibq8lyllg2qxk9wsii53kgs1fc79ccg9j06gbigafanxz";
-    x86_64-darwin = "0f089v3rmxkc3wk94j18zml9v1hl0f1l1kzlsy1vaf9bsxc4vfli";
-    aarch64-darwin = "1h6c5j9f68wvxmzhz0c5zkhbiqz57hmfzd6jnbpa3zn2z50wrf65";
+    x86_64-linux = "02ddal1avs948jqy9mpswh1cbgd4xqr9zl5mjpgfsns1x4y8pr4j";
+    aarch64-linux = "0vq2a885mxflswxkgjfdr3ivr8fkn7g0pldwxbjwpxfgilw9hw90";
+    x86_64-darwin = "1hf6031sc25rrdnnyzx3nimh9vamrrc7z9a2g8fxbccrb106xj4f";
+    aarch64-darwin = "04yrq24y3kr01fi3bik09dg2py8slnm3rfvp3f47pp6khzcnqdb8";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/combor/baryon-mcp/releases/download/v0.7.0/baryon-mcp_0.7.0_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/combor/baryon-mcp/releases/download/v0.7.0/baryon-mcp_0.7.0_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/combor/baryon-mcp/releases/download/v0.7.0/baryon-mcp_0.7.0_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/combor/baryon-mcp/releases/download/v0.7.0/baryon-mcp_0.7.0_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/combor/baryon-mcp/releases/download/v0.7.1/baryon-mcp_0.7.1_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/combor/baryon-mcp/releases/download/v0.7.1/baryon-mcp_0.7.1_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/combor/baryon-mcp/releases/download/v0.7.1/baryon-mcp_0.7.1_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/combor/baryon-mcp/releases/download/v0.7.1/baryon-mcp_0.7.1_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "baryon-mcp";
-  version = "0.7.0";
+  version = "0.7.1";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
