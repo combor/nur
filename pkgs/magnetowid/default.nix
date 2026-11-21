@@ -11,22 +11,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "0cmsny19pg9fdgdsys5xj2m84s2qjhfqy71qlkcxvn0wz06pnlm9";
-    aarch64-linux = "0h0gz8wwna3b25dd6hw2hi40hwc2167qhxcmifpqssrlvz3nz3px";
-    x86_64-darwin = "1qxh2gzhhvaasxivja486h9yy3y2i24p71qf5a3isn061hblai8q";
-    aarch64-darwin = "11yb22fniz11ih38xw3jplym4f4r677dnnqw96lsq6hdqbqw5di6";
+    x86_64-linux = "087mkqqp89vgwlsqvr58l6gffm85nqwv8rkfj23salkgqqbqjmjf";
+    aarch64-linux = "1a1abhj9cdi2bqw3ng47rzik8yb6vja3yw0gx69x2csw4mpm8r23";
+    x86_64-darwin = "1hl2ax0hrqy8plr14iv1657avw36s2r78bb77yhwlp2zcb96rr2s";
+    aarch64-darwin = "0ygkbsppghw1yc7zrhqbi763fh1apv6lscb6fhqmypyasa22hmb3";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/combor/magnetowid/releases/download/v0.4.5/magnetowid_0.4.5_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/combor/magnetowid/releases/download/v0.4.5/magnetowid_0.4.5_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/combor/magnetowid/releases/download/v0.4.5/magnetowid_0.4.5_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/combor/magnetowid/releases/download/v0.4.5/magnetowid_0.4.5_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/combor/magnetowid/releases/download/v0.4.6/magnetowid_0.4.6_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/combor/magnetowid/releases/download/v0.4.6/magnetowid_0.4.6_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/combor/magnetowid/releases/download/v0.4.6/magnetowid_0.4.6_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/combor/magnetowid/releases/download/v0.4.6/magnetowid_0.4.6_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "magnetowid";
-  version = "0.4.5";
+  version = "0.4.6";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
